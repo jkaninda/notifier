@@ -12,9 +12,9 @@ var currentTime = time.Now().Format("2006/01/02 15:04:05")
 func Info(msg string, args ...any) {
 	formattedMessage := fmt.Sprintf(msg, args...)
 	if len(args) == 0 {
-		fmt.Printf("%s INFO: %s\n", currentTime, msg)
+		fmt.Printf(msg)
 	} else {
-		fmt.Printf("%s INFO: %s\n", currentTime, formattedMessage)
+		fmt.Printf(formattedMessage)
 	}
 }
 
@@ -22,9 +22,9 @@ func Info(msg string, args ...any) {
 func Warn(msg string, args ...any) {
 	formattedMessage := fmt.Sprintf(msg, args...)
 	if len(args) == 0 {
-		fmt.Printf("%s WARN: %s\n", currentTime, msg)
+		fmt.Printf(msg)
 	} else {
-		fmt.Printf("%s WARN: %s\n", currentTime, formattedMessage)
+		fmt.Printf(formattedMessage)
 	}
 }
 
@@ -32,17 +32,17 @@ func Warn(msg string, args ...any) {
 func Error(msg string, args ...any) {
 	formattedMessage := fmt.Sprintf(msg, args...)
 	if len(args) == 0 {
-		fmt.Printf("%s ERROR: %s\n", currentTime, msg)
+		fmt.Printf(msg)
 	} else {
-		fmt.Printf("%s ERROR: %s\n", currentTime, formattedMessage)
+		fmt.Printf(formattedMessage)
 	}
 }
 func Done(msg string, args ...any) {
 	formattedMessage := fmt.Sprintf(msg, args...)
 	if len(args) == 0 {
-		fmt.Printf("%s INFO: %s\n", currentTime, msg)
+		fmt.Printf(msg)
 	} else {
-		fmt.Printf("%s INFO: %s\n", currentTime, formattedMessage)
+		fmt.Printf(formattedMessage)
 	}
 }
 
@@ -50,9 +50,9 @@ func Done(msg string, args ...any) {
 func Fatal(msg string, args ...any) {
 	formattedMessage := fmt.Sprintf(msg, args...)
 	if len(args) == 0 {
-		fmt.Printf("%s ERROR: %s\n", currentTime, msg)
+		fmt.Printf(msg)
 	} else {
-		fmt.Printf("%s ERROR: %s\n", currentTime, formattedMessage)
+		fmt.Printf(formattedMessage)
 	}
 	os.Exit(1)
 }

@@ -22,7 +22,7 @@ func SendEmail(cmd *cobra.Command) {
 	mailPassword = os.Getenv("MAIL_PASSWORD")
 	mailTo = util.GetEnv(cmd, "to", "MAIL_TO")
 	mailSubject = util.GetEnv(cmd, "subject", "MAIL_SUBJECT")
-	mialBody = util.GetEnv(cmd, "body", "MAIL_BODY")
+	mailBody = util.GetEnv(cmd, "body", "MAIL_BODY")
 	mailFrom = os.Getenv("MAIL_FROM")
 
 	util.Info("Start sending email....")
@@ -44,7 +44,7 @@ func SendEmail(cmd *cobra.Command) {
 	//m.SetAddressHeader("Cc", "jonas@mailhog.local", "Jonas")
 
 	m.SetHeader("Subject", mailSubject)
-	m.SetBody("text/html", mialBody)
+	m.SetBody("text/html", mailBody)
 	//m.Attach("lolcat.jpg")
 	d := mail.NewDialer(mailHost, mailPort, mailUserName, mailPassword)
 	if err := d.DialAndSend(m); err != nil {

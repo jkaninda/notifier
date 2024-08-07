@@ -6,7 +6,7 @@ var (
 	mailUserName = ""
 	mailPassword = ""
 	//mailStartTls = true
-	mialBody    = ""
+	mailBody    = ""
 	mailTo      = ""
 	mailSubject = ""
 	mailFrom    = ""
