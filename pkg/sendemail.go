@@ -1,6 +1,7 @@
 package pkg
 
 import (
+	"fmt"
 	"jkaninda/notifier/util"
 	"os"
 
@@ -13,7 +14,7 @@ func SendEmail(cmd *cobra.Command) {
 	//Load env
 	err := godotenv.Load()
 	if err != nil {
-		util.Info(".env file not found")
+		fmt.Print("")
 	}
 
 	mailHost = os.Getenv("MAIL_HOST")

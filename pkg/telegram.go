@@ -21,8 +21,7 @@ func SendMessage(cmd *cobra.Command) {
 	//Load env
 	err := godotenv.Load()
 	if err != nil {
-		util.Info(".env file not found")
-		//util.Error("Error loading .env file, file not found")
+		fmt.Print("")
 	}
 	message = util.GetEnv(cmd, "message", "TG_MESSAGE")
 	token := os.Getenv("TG_TOKEN")
