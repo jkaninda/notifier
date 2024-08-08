@@ -1,4 +1,5 @@
 notifier
-.env
+.env2
 .idea
 /.idea
+bin

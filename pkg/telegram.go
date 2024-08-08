@@ -4,12 +4,12 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/joho/godotenv"
-	"github.com/spf13/cobra"
 	"io/ioutil"
 	"jkaninda/notifier/util"
 	"net/http"
 	"os"
+
+	"github.com/spf13/cobra"
 )
 
 func getUrl(token string) string {
@@ -19,10 +19,9 @@ func getUrl(token string) string {
 
 func SendMessage(cmd *cobra.Command) {
 	//Load env
-	err := godotenv.Load()
-	if err != nil {
-		fmt.Print("")
-	}
+	envFile, _ = cmd.Flags().GetString("env-file")
+	util.LoadEnv(envFile)
+
 	message = util.GetEnv(cmd, "message", "TG_MESSAGE")
 	token := os.Getenv("TG_TOKEN")
 	chatId := os.Getenv("TG_CHAT_ID")
@@ -31,7 +30,7 @@ func SendMessage(cmd *cobra.Command) {
 		"TG_TOKEN",
 		"TG_CHAT_ID",
 	}
-	err = util.CheckEnvVars(vars)
+	err := util.CheckEnvVars(vars)
 	if err != nil {
 		util.Fatal("Required environment variables needed, %v", err)
 	}

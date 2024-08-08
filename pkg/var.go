@@ -5,12 +5,14 @@ var (
 	mailPort     = 585
 	mailUserName = ""
 	mailPassword = ""
-	//mailStartTls = true
-	mailBody    = ""
-	mailTo      = ""
-	mailSubject = ""
-	mailFrom    = ""
+	skipTls      = false
+	mailBody     = ""
+	mailTo       = ""
+	mailSubject  = ""
+	mailFrom     = ""
+	attachFile   = ""
 )
 var (
 	message = ""
+	envFile = ""
 )

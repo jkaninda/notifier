@@ -25,5 +25,7 @@ func Execute() {
 }
 func init() {
 	rootCmd.AddCommand(sendMessage)
-	rootCmd.AddCommand(sendEmail)
+	rootCmd.AddCommand(sendMail)
+	rootCmd.PersistentFlags().StringP("env-file", "", "", "Environment variable file")
+
 }

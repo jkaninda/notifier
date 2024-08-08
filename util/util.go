@@ -5,6 +5,7 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
 
@@ -21,13 +22,12 @@ func GetEnv(cmd *cobra.Command, flagName, envName string) string {
 func GetIntEnv(envName string) int {
 	val := os.Getenv(envName)
 	if val == "" {
-		fmt.Printf("Error %s is required \n", envName)
-		os.Exit(1)
+		Fatal("Error %s  is required \n", envName)
 	}
 	ret, err := strconv.Atoi(val)
 	if err != nil {
-		fmt.Printf("Error getting env: %s\n", envName)
-		os.Exit(1)
+		Fatal("Error %s  is required \n", envName)
+
 	}
 	return ret
 }
@@ -47,4 +47,19 @@ func CheckEnvVars(vars []string) error {
 	}
 
 	return nil
+}
+
+func LoadEnv(file string) {
+	if file != "" {
+		err := godotenv.Load(file)
+		if err != nil {
+			return
+		}
+		return
+	} else {
+		err := godotenv.Load()
+		if err != nil {
+			return
+		}
+	}
 }
