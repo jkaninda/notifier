@@ -1,8 +1,8 @@
 # Notifier
-Email, Telegram and Mattermost notifier
+Email, Telegram, and Mattermost notifier
 
-This tool was developed for personal needs. I use the binary in my Docker Toolkit image which I use to run on Gitlab jobs or Jenkins CI/CD.
-This allows me to send notifications via email, Telegram channel or Mattermost.
+This tool was developed for personal needs. I use the binary in my Docker Toolkit image to run on Gitlab jobs or Jenkins CI/CD.
+This allows me to send notifications via email, Telegram channel, or Mattermost.
 
 I wanted to share it with you.
 
@@ -48,7 +48,7 @@ TG_TOKEN=
 TG_CHAT_ID=
 TG_MESSAGE="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 ```
-## Gitlab CI 
+## Gitlab CI
 
 ```yaml
 variables:
@@ -154,4 +154,4 @@ test:
 
 
 
-👏👏👏 Enjoy! Welcome star if like it😄
+👏👏👏 Enjoy! Welcome star if you like it😄
