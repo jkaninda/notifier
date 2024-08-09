@@ -1,7 +1,8 @@
 # Notifier
 Email, Telegram, and Mattermost notifier
 
-This tool was developed for personal needs. I use the binary in my Docker Toolkit image to run on Gitlab jobs or Jenkins CI/CD.
+This tool was developed for personal needs.
+I use the binary in my Docker Toolkit image to run on Gitlab jobs or Jenkins CI/CD.
 This allows me to send notifications via email, Telegram channel, or Mattermost.
 
 I wanted to share it with you.
@@ -28,7 +29,7 @@ notifier sendMessage --message "Your message"
 ```
 ## Run on Docker
 ```sh
-docker run jkaninda/notifier --env-file my-env-file sendMessage --message "Your message"
+docker run jkaninda/notifier sendMessage --message "Your message" --env-file my-env-file
 ```
 
 `.env`
