@@ -12,7 +12,7 @@ var rootCmd = &cobra.Command{
 	Short:   "Send notification using Email or Telegram",
 	Long:    `Send notification using Email or Telegram`,
 	Example: "",
-	//Version: appVersion,
+	Version: appVersion,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

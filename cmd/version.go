@@ -2,12 +2,11 @@ package cmd
 
 import (
 	"fmt"
-	"os"
-
 	"github.com/spf13/cobra"
+	"jkaninda/notifier/pkg"
 )
 
-var appVersion = os.Getenv("VERSION")
+var appVersion = pkg.AppVersion
 
 var VersionCmd = &cobra.Command{
 	Use:   "version",

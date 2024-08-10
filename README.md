@@ -1,5 +1,5 @@
 # Notifier
-Email, Telegram, and Mattermost notifier
+Email, Telegram, and Mattermost Notifier
 
 This tool was developed for personal needs.
 I use the binary in my Docker Toolkit image to run on Gitlab jobs or Jenkins CI/CD.
@@ -15,12 +15,12 @@ go build .
 ## Send a mail
 
 ```sh
-./notifier sendMail --body "Your message" --subject "Your subject"
+./notifier sendMail --message "Your message" --subject "Your subject"
 ```
 ## Attach a file to the mail
 
 ```sh
-./notifier sendMail --body "Your message" --subject "Your subject" --attach photo.jpg
+./notifier sendMail --message "Your message" --subject "Your subject" --attach photo.jpg
 ```
 
 ## Send Telegram Message
@@ -146,7 +146,7 @@ test:
       <p>Best,</p>
       <p>CI/CD Pipeline</p>
       "
-    - notifier sendMail --body "$MESSAGE" --subject "Gitlab CI Build Completed"
+    - notifier sendMail --message "$MESSAGE" --subject "Gitlab CI Build Completed"
     -  echo "================= API TEST COMPLETED ======================================="
     - echo "========================= JOB COMPLETED ================="
   tags:

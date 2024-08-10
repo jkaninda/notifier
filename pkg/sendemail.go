@@ -20,7 +20,7 @@ func SendEmail(cmd *cobra.Command) {
 	mailPassword = os.Getenv("MAIL_PASSWORD")
 	mailTo = util.GetEnv(cmd, "to", "MAIL_TO")
 	mailSubject = util.GetEnv(cmd, "subject", "MAIL_SUBJECT")
-	mailBody = util.GetEnv(cmd, "body", "MAIL_BODY")
+	mailBody = util.GetEnv(cmd, "message", "MAIL_BODY")
 	mailFrom = os.Getenv("MAIL_FROM")
 	skipTls, _ = cmd.Flags().GetBool("insecure")
 	attachFile, _ = cmd.Flags().GetString("attach")
