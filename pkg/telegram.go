@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/jkaninda/notifier/util"
 	"io/ioutil"
-	"jkaninda/notifier/util"
 	"net/http"
 	"os"
 

@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/jkaninda/notifier/pkg"
 	"github.com/spf13/cobra"
-	"jkaninda/notifier/pkg"
 )
 
 var appVersion = pkg.AppVersion

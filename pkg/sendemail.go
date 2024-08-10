@@ -2,7 +2,7 @@ package pkg
 
 import (
 	"crypto/tls"
-	"jkaninda/notifier/util"
+	"github.com/jkaninda/notifier/util"
 	"os"
 
 	"github.com/go-mail/mail"

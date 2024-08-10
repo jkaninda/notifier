@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"jkaninda/notifier/pkg"
+	"github.com/jkaninda/notifier/pkg"
 
 	"github.com/spf13/cobra"
 )

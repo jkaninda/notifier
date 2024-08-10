@@ -1,4 +1,4 @@
-module jkaninda/notifier
+module github.com/jkaninda/notifier
 
 go 1.22.6
 
