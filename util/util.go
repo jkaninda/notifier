@@ -51,15 +51,9 @@ func CheckEnvVars(vars []string) error {
 
 func LoadEnv(file string) {
 	if file != "" {
-		err := godotenv.Load(file)
-		if err != nil {
-			return
-		}
+		godotenv.Load(file)
 		return
 	} else {
-		err := godotenv.Load()
-		if err != nil {
-			return
-		}
+		godotenv.Load()
 	}
 }

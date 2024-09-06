@@ -4,43 +4,25 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/jkaninda/notifier/util"
 	"io/ioutil"
 	"net/http"
-	"os"
+
+	"github.com/jkaninda/notifier/util"
 
 	"github.com/spf13/cobra"
 )
 
-func getUrl(token string) string {
-	return fmt.Sprintf("https://api.telegram.org/bot%s", token)
-
-}
-
 func SendMessage(cmd *cobra.Command) {
-	//Load env
-	envFile, _ = cmd.Flags().GetString("env-file")
-	util.LoadEnv(envFile)
 
-	message = util.GetEnv(cmd, "message", "TG_MESSAGE")
-	token := os.Getenv("TG_TOKEN")
-	chatId := os.Getenv("TG_CHAT_ID")
+	config := getTgConfig(cmd)
 
-	var vars = []string{
-		"TG_TOKEN",
-		"TG_CHAT_ID",
-	}
-	err := util.CheckEnvVars(vars)
-	if err != nil {
-		util.Fatal("Required environment variables needed, %v", err)
-	}
 	body, _ := json.Marshal(map[string]string{
-		"chat_id": chatId,
-		"text":    message,
+		"chat_id": config.chatId,
+		"text":    config.message,
 	})
-	url := fmt.Sprintf("%s/sendMessage", getUrl(token))
+	url := fmt.Sprintf("%s/sendMessage", getTgUrl(config.token))
 
-	// Create a HTTP post request
+	// Create an HTTP post request
 	request, err := http.NewRequest("POST", url, bytes.NewBuffer(body))
 	if err != nil {
 		panic(err)

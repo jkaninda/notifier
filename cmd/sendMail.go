@@ -15,9 +15,9 @@ var sendMail = &cobra.Command{
 }
 
 func init() {
-	sendMail.PersistentFlags().StringP("to", "t", "", "Destination email")
+	sendMail.PersistentFlags().StringP("to", "t", "", "Comma-separated list of email addresses")
 	sendMail.PersistentFlags().StringP("subject", "", "", "Email subject")
-	sendMail.PersistentFlags().StringP("message", "", "", "Email message")
+	sendMail.PersistentFlags().StringP("body", "", "", "Email body")
 	sendMail.PersistentFlags().BoolP("insecure", "", false, "Disable StartTLS")
 	sendMail.PersistentFlags().StringP("attach", "", "", "Attach a file")
 }

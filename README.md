@@ -15,12 +15,12 @@ go build .
 ## Send a mail
 
 ```sh
-./notifier sendMail --message "Your message" --subject "Your subject"
+./notifier sendMail --body "Your message" --subject "Your subject"
 ```
 ## Attach a file to the mail
 
 ```sh
-./notifier sendMail --message "Your message" --subject "Your subject" --attach photo.jpg
+./notifier sendMail --body "Your message" --subject "Your subject" --attach photo.jpg
 ```
 
 ## Send Telegram Message
