@@ -3,3 +3,4 @@ notifier
 .idea
 /.idea
 bin
+.DS_Store
