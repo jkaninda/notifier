@@ -29,7 +29,7 @@ notifier sendMessage --message "Your message"
 ```
 ## Run on Docker
 ```sh
-docker run jkaninda/notifier sendMessage --message "Your message" --env-file my-env-file
+docker run --env-file your-env-file jkaninda/notifier sendMessage --message "Your message" 
 ```
 
 `.env`
