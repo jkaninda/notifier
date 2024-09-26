@@ -146,7 +146,7 @@ test:
       <p>Best,</p>
       <p>CI/CD Pipeline</p>
       "
-    - notifier sendMail --message "$MESSAGE" --subject "Gitlab CI Build Completed"
+    - notifier sendMail --body "$MESSAGE" --subject "Gitlab CI Build Completed"
     -  echo "================= API TEST COMPLETED ======================================="
     - echo "========================= JOB COMPLETED ================="
   tags:
